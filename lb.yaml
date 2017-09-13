@@ -4,12 +4,13 @@ parameters:
   image:
     type: string
     description: Image used for servers
+    default: ubuntu-14.04
   key_name:
     type: string
     description: SSH key to connect to the servers
   flavor:
     type: string
-    default: ubuntu-14.04
+    default: m1.small
   pool_id:
     type: string
     description: Pool to contact

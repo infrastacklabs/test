@@ -26,7 +26,7 @@ parameters:
   subnet:
     type: string
     description: subnet on which server will be located
-    default: a0cf224b-1f42-4650-b219-b9320d4ea06f
+    default: private
 
 resources:
   server:

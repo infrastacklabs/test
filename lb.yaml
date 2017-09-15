@@ -29,7 +29,7 @@ resources:
       name: web_server
       flavor: {get_param: flavor}
       image: {get_param: image}
-      key_name: {get_param: key_name}
+      key_name: demo
       metadata: {get_param: metadata}
       user_data: {get_param: user_data}
       user_data_format: RAW

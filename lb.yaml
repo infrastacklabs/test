@@ -21,15 +21,14 @@ parameters:
   network:
     type: string
     description: Network used by the server
-    default: private
+
 resources:
   server:
     type: OS::Nova::Server
     properties:
-      name: web_server
       flavor: {get_param: flavor}
       image: {get_param: image}
-      key_name: demo
+      key_name: {get_param: key_name}
       metadata: {get_param: metadata}
       user_data: {get_param: user_data}
       user_data_format: RAW
@@ -40,3 +39,11 @@ resources:
       pool_id: {get_param: pool_id}
       address: {get_attr: [server, first_address]}
       protocol_port: 80
+
+outputs:
+  server_ip:
+    description: IP Address of the load-balanced server.
+    value: { get_attr: [server, first_address] }
+  lb_member:
+    description: LB member details.
+    value: { get_attr: [member, show] }

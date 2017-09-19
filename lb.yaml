@@ -21,6 +21,7 @@ parameters:
   network:
     type: string
     description: Network used by the server
+    default: private
 
 resources:
   server:
